@@ -3,26 +3,26 @@
     <div class="row">
       <div class="col-sm-12">
 
-        <div :id="'clf-'+index" style="padding-top: 10px">
-          <span class="font-weight-bold" style="padding-left: 7px">Label: </span>
-          <span v-if="labels" v-html="emojify(labels[sample.label].name)"></span>
-          <span v-else>{{sample.label}}</span>
-          <span style="padding-right: 20px"></span>
+        <!--<div :id="'clf-'+index" style="padding-top: 10px">-->
+          <!--<span class="font-weight-bold" style="padding-left: 7px">Label: </span>-->
+          <!--<span v-if="labels" v-html="emojify(labels[sample.label].name)"></span>-->
+          <!--<span v-else>{{sample.label}}</span>-->
+          <!--<span style="padding-right: 20px"></span>-->
 
 
-          <div v-if="sample.posterior.length > 10"
-               style="display: inline-block">
-            <span class="font-weight-bold">Top 5: </span>
-            <ul class="list-inline" style="display: inline;">
-              <li class="list-inline-item" v-for="i in 5">
-                <span v-html="emojify(labels[topIndices[i-1]].name)"></span>
-              </li>
-            </ul>
-          </div>
-        </div>
+          <!--<div v-if="sample.posterior.length > 10"-->
+               <!--style="display: inline-block">-->
+            <!--<span class="font-weight-bold">Top 5: </span>-->
+            <!--<ul class="list-inline" style="display: inline;">-->
+              <!--<li class="list-inline-item" v-for="i in 5">-->
+                <!--<span v-html="emojify(labels[topIndices[i-1]].name)"></span>-->
+              <!--</li>-->
+            <!--</ul>-->
+          <!--</div>-->
+        <!--</div>-->
 
-        <br>
-        <br>
+        <!--<br>-->
+        <!--<br>-->
 
         <table class="table table-bordered table-hover table-sm">
           <tbody>

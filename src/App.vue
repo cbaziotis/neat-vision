@@ -34,13 +34,13 @@
                 <b-form-group
                   :label-cols="4"
                   label-size="md"
-                  label="Attentions file"
+                  label="Data file"
                   label-for="attentionsFile">
 
                   <b-form-file id="attentionsFile"
                                v-model="attentionsFile"
                                :state="Boolean(attentionsFile)"
-                               placeholder="Choose attentions file..."></b-form-file>
+                               placeholder="Select data file..."></b-form-file>
                 </b-form-group>
               </div>
             </div>
@@ -55,7 +55,7 @@
                   <b-form-file id="labelsFile"
                                v-model="labelsFile"
                                :state="Boolean(labelsFile)"
-                               placeholder="Choose labels file..."></b-form-file>
+                               placeholder="Select labels file..."></b-form-file>
                 </b-form-group>
               </div>
             </div>
@@ -82,9 +82,11 @@
       <!-- Page Content -->
       <div id="page-content-wrapper">
         <div class="container-fluid">
+
+          <!--navbar-->
           <div class="row">
             <div class="col-sm-12">
-              <nav class="navbar navbar-light bg-light">
+              <nav class="navbar  navbar-light bg-light fixed-top">
                 <a class="navbar-brand" href="#">
                   <strong>Neat</strong> (Neural Attention) <strong>Vision</strong>
                 </a>
@@ -95,7 +97,6 @@
                   <span class="navbar-toggler-icon"></span>
                 </b-button>
               </nav>
-              <br>
             </div>
           </div>
 
@@ -107,87 +108,87 @@
             </div>
           </div>
 
-          <!--VISUALIZATIONS-->
-          <div>
-            <!--TOP PAGINATION-->
-            <div class="row " v-if="validSamples(samples).length>0 && !statuses.isLoadingFile">
-              <div class="col-sm-6">
-                <b-pagination size="sm" align="right"
-                              variant="default"
-                              v-model="pagination.currentPage"
-                              :total-rows="validSamples(samples).length"
-                              :per-page="pagination.perPage">
-                </b-pagination>
-              </div>
-              <div class="col-sm-6">
+          <!--TOP PAGINATION-->
+          <div class="row " v-if="validSamples(samples).length>0 && !statuses.isLoadingFile">
+            <div class="col-12 col-md">
+              <b-pagination size="sm" align="right"
+                            v-model="pagination.currentPage"
+                            :total-rows="validSamples(samples).length"
+                            :per-page="pagination.perPage">
+              </b-pagination>
+            </div>
+            <div class="col-12 col-md-auto">
+              <div style="background: red; width: 300px;">
                 <b-form inline class="float-right">
                   <label class="mr-sm-2">Per Page</label>
                   <b-form-select v-model="pagination.perPage" :options="pagination.options" size="sm"/>
                 </b-form>
-              </div>
-            </div>
 
-            <!--<pre>{{pagination.currentPage}}</pre>-->
-
-            <!--SAMPLES-->
-            <div class="div" v-if="!statuses.isLoadingFile">
-              <div class="row"
-                   v-for="sample in paginate(validSamples(samples),pagination.perPage,pagination.currentPage)"
-                   :key="sample.id">
-                <div class="col-sm-12">
-                  <div class="sample">
-                    <app-sentence :sentence="sample" :options="options" :index="sample.id"/>
-
-                    <hr v-if="options.showPredictions">
-
-                    <!--Regression-->
-                    <app-prediction-regression
-                      v-if="options.showPredictions && options.task === 'reg'"
-                      :sample="sample"
-                      :options="options"
-                      :index="sample.id"/>
-
-                    <!--Classification-->
-                    <app-prediction-classification
-                      v-if="options.showPredictions && options.task === 'clf'"
-                      :sample="sample"
-                      :labels="labels"
-                      :options="options"
-                      :index="sample.id"/>
-
-
-                    <!--Multi-Label Classification-->
-                    <app-prediction-multi-classification
-                      v-if="options.showPredictions && options.task === 'multi-clf'"
-                      :sample="sample"
-                      :labels="labels"
-                      :options="options"
-                      :index="sample.id"/>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <!--BOTTOM PAGINATION-->
-            <div class="row" v-if="validSamples(samples).length>0 && !statuses.isLoadingFile">
-              <div class="col-sm-6">
-                <b-pagination size="sm" align="right"
-                              variant="default"
-                              v-model="pagination.currentPage"
-                              :total-rows="validSamples(samples).length"
-                              :per-page="pagination.perPage">
-                </b-pagination>
-              </div>
-              <div class="col-sm-6">
-                <b-form inline class="float-right">
-                  <label class="mr-sm-2">Per Page</label>
-                  <b-form-select v-model="pagination.perPage" :options="pagination.options" size="sm"/>
-                </b-form>
               </div>
             </div>
           </div>
+
+
+          <!--SAMPLES-->
+          <div class="div" v-if="!statuses.isLoadingFile">
+            <div class="row"
+                 v-for="sample in paginate(validSamples(samples),pagination.perPage,pagination.currentPage)"
+                 :key="sample.id">
+              <div class="col-sm-12">
+                <div class="sample">
+                  <app-sentence :sentence="sample" :options="options" :index="sample.id"/>
+
+                  <hr v-if="options.showPredictions">
+
+                  <!--Regression-->
+                  <app-prediction-regression
+                    v-if="options.showPredictions && options.task === 'reg'"
+                    :sample="sample"
+                    :options="options"
+                    :index="sample.id"/>
+
+                  <!--Classification-->
+                  <app-prediction-classification
+                    v-if="options.showPredictions && options.task === 'clf'"
+                    :sample="sample"
+                    :labels="labels"
+                    :options="options"
+                    :index="sample.id"/>
+
+
+                  <!--Multi-Label Classification-->
+                  <app-prediction-multi-classification
+                    v-if="options.showPredictions && options.task === 'multi-clf'"
+                    :sample="sample"
+                    :labels="labels"
+                    :options="options"
+                    :index="sample.id"/>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--BOTTOM PAGINATION-->
+          <div class="row " v-if="validSamples(samples).length>0 && !statuses.isLoadingFile">
+            <div class="col-12 col-md">
+              <b-pagination size="sm" align="right"
+                            v-model="pagination.currentPage"
+                            :total-rows="validSamples(samples).length"
+                            :per-page="pagination.perPage">
+              </b-pagination>
+            </div>
+            <div class="col-12 col-md-auto">
+              <div style="background: red; width: 300px;">
+                <b-form inline class="float-right">
+                  <label class="mr-sm-2">Per Page</label>
+                  <b-form-select v-model="pagination.perPage" :options="pagination.options" size="sm"/>
+                </b-form>
+
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
       <!-- /#page-content-wrapper -->
@@ -233,11 +234,11 @@
         }
       }
     },
-    mounted: function () {
-      window.$("#menu-toggle").click(function (e) {
-        e.preventDefault();
-        window.$("#wrapper").toggleClass("toggled");
-      });
+    watch: {
+      'options.task': function (val, oldVal) {
+        this.labels = null;
+        this.samples = null;
+      }
     },
     methods: {
       loadAttentions: function () {
@@ -268,9 +269,14 @@
         reader.readAsText(this.labelsFile);
       },
       loadData: function () {
-        this.options.filteredLabel = null;
-        this.loadAttentions();
-        this.loadLabels();
+
+        if (!this.options.attentionsFile) {
+          alert("Select a data file first!")
+        } else {
+          this.options.filteredLabel = null;
+          this.loadAttentions();
+          this.loadLabels();
+        }
       },
       isSampleVisible: function (sentence) {
 
@@ -336,6 +342,10 @@
     margin: 5px 0;
     font-family: "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
 
+  }
+
+  body {
+    padding-top: 50px;
   }
 
   .sentence img.emoji {

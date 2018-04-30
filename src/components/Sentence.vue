@@ -1,9 +1,8 @@
 <template>
   <div class="sentence-wrapper">
     <div class="row">
-      <div class="col-sm-12">
-        <!--<pre>{{sentence.id}}</pre>-->
 
+      <div class="col-12 col-sm">
         <div class="sentence" :id="sentence.id" ref="sentence.id" :class="sentenceWidth">
           <div v-for="(item, index) in emojify(sentence.text)" class="token">
             <div class="word" :style="opacityStat(index,'word')">
@@ -16,56 +15,46 @@
             </div>
           </div>
         </div>
-
-
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 sentence-functions">
 
-        <!--<b-form-group horizontal-->
-                      <!--:label-cols="6"-->
-                      <!--breakpoint="sm"-->
-                      <!--label="Font size (em)"-->
-                      <!--style="display: inline-block">-->
 
-          <!--<b-form-input v-model="fontSize"-->
-                        <!--type="number" step="0.1" size="sm"></b-form-input>-->
-        <!--</b-form-group>-->
+      <div class="col-12 col-sm-auto">
+        <div class="sentence-functions">
+          <button class="btn btn-outline-secondary btn-xs text-center"
+                  v-on:click="toImage">
+            <i class="fa fa-camera"></i>
+          </button>
+          <br>
 
-        <button class="btn btn-outline-secondary float-right btn-xs text-center"
-                style="height: 36px; width: 40px"
-                v-on:click="toImage">
-          <i class="fa fa-camera"></i>
-        </button>
+          <b-button :pressed.sync="showAttentions"
+                    class="btn btn-outline-secondary btn-xs"
+                    size="sm">
+            <i v-if="showAttentions" class="fa fa-eye"></i>
+            <i v-else class="fa fa-eye-slash"></i>
+          </b-button>
 
-        <b-button :pressed.sync="showAttentions"
-                  class="btn btn-outline-secondary float-right btn-xs"
-                  style="height: 36px; width: 40px"
-                  size="sm">
-          <i v-if="showAttentions" class="fa fa-eye"></i>
-          <i v-else class="fa fa-eye-slash"></i>
-        </b-button>
-
-        <!--<button :class="{ active: sentenceWidth==='fullwidth' }"-->
-                <!--v-on:click="setSentenceWidth('fullwidth')"-->
-                <!--class="btn btn-outline-secondary float-right btn-xs"-->
-                <!--size="sm">-->
+          <!--<button :class="{ active: sentenceWidth==='fullwidth' }"-->
+          <!--v-on:click="setSentenceWidth('fullwidth')"-->
+          <!--class="btn btn-outline-secondary float-right btn-xs"-->
+          <!--size="sm">-->
           <!--fullwidth-->
-        <!--</button>-->
-        <!--<button :class="{ active: sentenceWidth==='textwidth' }"-->
-                <!--v-on:click="setSentenceWidth('textwidth')"-->
-                <!--class="btn btn-outline-secondary float-right btn-xs"-->
-                <!--size="sm">-->
+          <!--</button>-->
+          <!--<button :class="{ active: sentenceWidth==='textwidth' }"-->
+          <!--v-on:click="setSentenceWidth('textwidth')"-->
+          <!--class="btn btn-outline-secondary float-right btn-xs"-->
+          <!--size="sm">-->
           <!--textwidth-->
-        <!--</button>-->
-        <!--<button :class="{ active: sentenceWidth==='columnwidth' }"-->
-                <!--v-on:click="setSentenceWidth('columnwidth')"-->
-                <!--class="btn btn-outline-secondary float-right btn-xs"-->
-                <!--size="sm">-->
+          <!--</button>-->
+          <!--<button :class="{ active: sentenceWidth==='columnwidth' }"-->
+          <!--v-on:click="setSentenceWidth('columnwidth')"-->
+          <!--class="btn btn-outline-secondary float-right btn-xs"-->
+          <!--size="sm">-->
           <!--columnwidth-->
-        <!--</button>-->
+          <!--</button>-->
+
+        </div>
       </div>
+
     </div>
 
   </div>
@@ -80,7 +69,7 @@
       return {
         showAttentions: true,
         sentenceWidth: "fullwidth",
-        fontSize: 0.9
+        fontSize: 1.0
       }
     },
     computed: {
@@ -142,7 +131,7 @@
         let fontSize = this.fontSize;
 
         if (type === "attention") {
-          fontSize *= 0.65;
+          fontSize *= 0.75;
         }
 
         let style = {
@@ -209,7 +198,13 @@
 <style>
 
   .sentence-functions .btn {
-    margin: 0 5px;
+    height: 36px;
+    width: 100%;
+    margin: 2px 0;
+  }
+  div.sentence-functions {
+    /*background: red;*/
+    width: 45px;
   }
 
   .sentence {
