@@ -2,6 +2,8 @@
 
 > NeAt (Neural Attention) Vision, is a visualization tool for the attention mechanisms of deep-learning models for Natural Language Processing (NLP) tasks.
 
+Demo: https://cbaziotis.github.io/neat-vision/
+
 ## Build Setup
 
 ``` bash
