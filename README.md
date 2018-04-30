@@ -24,7 +24,18 @@ At this moment, only is supports the visualization of self-attention mechanisms,
 ### Examples
 
 <a href="url">
-<img src="./images/task1_ec/1-01.png" align="left" height="48" width="48" >
+<img src="./images/task1_ec/1-01.png" align="left" width="67" >
+</a>
+<a href="url">
+<img src="./images/task1_ec/1-02.png" align="left" width="67" >
+</a>
+
+<a href="url">
+<img src="./images/task1_ec/1-04.png" align="left" width="67" >
+</a>
+
+<a href="url">
+<img src="./images/task1_ec/1-05.png" align="left" width="67" >
 </a>
 
 
