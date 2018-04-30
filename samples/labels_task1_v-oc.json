@@ -1,0 +1,30 @@
+{
+  "0": {
+    "name": "-3",
+    "desc": "very negative"
+  },
+  "1": {
+    "name": "-2",
+    "desc": "moderately negative"
+  },
+  "2": {
+    "name": "-1",
+    "desc": "slightly negative"
+  },
+  "4": {
+    "name": "0",
+    "desc": "neutral or mixed"
+  },
+  "5": {
+    "name": "1",
+    "desc": "slightly positive"
+  },
+  "6": {
+    "name": "2",
+    "desc": "moderately positive"
+  },
+  "7": {
+    "name": "3",
+    "desc": "very positive mental"
+  }
+}

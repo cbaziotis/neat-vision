@@ -1,0 +1,18 @@
+{
+  "0": {
+    "name": "0",
+    "desc": "no emotion"
+  },
+  "1": {
+    "name": "1",
+    "desc": "low amount of emotion"
+  },
+  "2": {
+    "name": "2",
+    "desc": "moderate amount of emotion"
+  },
+  "3": {
+    "name": "3",
+    "desc": "high amount of emotion"
+  }
+}

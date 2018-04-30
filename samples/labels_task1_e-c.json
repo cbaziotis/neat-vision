@@ -1,0 +1,46 @@
+{
+  "0": {
+    "name": "anger",
+    "desc": "also includes annoyance and rage"
+  },
+  "1": {
+    "name": "anticipation",
+    "desc": "also includes interest and vigilance"
+  },
+  "2": {
+    "name": "disgust",
+    "desc": "also includes disinterest, dislike and loathing"
+  },
+  "3": {
+    "name": "fear",
+    "desc": "also includes apprehension, anxiety, concern, and terror"
+  },
+  "4": {
+    "name": "joy",
+    "desc": "also includes serenity and ecstasy"
+  },
+  "5": {
+    "name": "love",
+    "desc": "also includes affection"
+  },
+  "6": {
+    "name": "optimism",
+    "desc": "also includes hopefulness and confidence"
+  },
+  "7": {
+    "name": "pessimism",
+    "desc": "also includes cynicism and lack of confidence"
+  },
+  "8": {
+    "name": "sadness",
+    "desc": "also includes pensiveness and grief"
+  },
+  "9": {
+    "name": "surprise",
+    "desc": "also includes distraction and amazement"
+  },
+  "10": {
+    "name": "trust",
+    "desc": "also includes acceptance, liking, and admiration"
+  }
+}
