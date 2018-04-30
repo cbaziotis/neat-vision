@@ -23,6 +23,8 @@ At this moment, only is supports the visualization of self-attention mechanisms,
 
 ### Examples
 
+
+<p>
 <img src="./images/task1_ec/1-01.png" align="left" height="67" >
 <img src="./images/task1_ec/1-02.png" align="left" height="67" >
 </br>
@@ -41,7 +43,7 @@ At this moment, only is supports the visualization of self-attention mechanisms,
 </br>
 </br>
 
-<p></p>
+</p>
 
 ## Build Setup
 
