@@ -25,17 +25,17 @@ At this moment, only is supports the visualization of self-attention mechanisms,
 
 
 <p>
-<img src="./images/task1_ec/1-01.png" height="50" >
-<img src="./images/task1_ec/1-02.png" height="50" >
+<img src="./images/task1_ec/1-01.png" height="60" >
+<img src="./images/task1_ec/1-02.png" height="60" >
 </br>
-<img src="./images/task1_ec/1-04.png" height="50" >
-<img src="./images/task1_ec/1-05.png" height="50" >
+<img src="./images/task1_ec/1-04.png" height="60" >
+<img src="./images/task1_ec/1-05.png" height="60" >
 </br>
-<img src="./images/task1_ec/1-10.png" height="50" >
-<img src="./images/task1_ec/1-11.png" height="50" >
+<img src="./images/task1_ec/1-10.png" height="60" >
+<img src="./images/task1_ec/1-11.png" height="60" >
 </br>
-<img src="./images/task1_ec/1-12.png" height="50" >
-<img src="./images/task1_ec/1-13.png" height="50" >
+<img src="./images/task1_ec/1-12.png" height="60" >
+<img src="./images/task1_ec/1-13.png" height="60" >
 </br>
 </p>
 
