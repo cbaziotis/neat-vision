@@ -23,7 +23,9 @@ At this moment, only is supports the visualization of self-attention mechanisms,
 
 ### Examples
 
-![](./images/task1_ec/1-01.png =250x)
+<a href="url">
+<img src="./images/task1_ec/1-01.png" align="left" height="48" width="48" >
+</a>
 
 
 ## Build Setup
