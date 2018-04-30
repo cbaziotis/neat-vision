@@ -4,6 +4,27 @@
 
 Demo: https://cbaziotis.github.io/neat-vision/
 
+## Attention Mechanism
+In deep-learning, an attention mechanism is usually employed, 
+in order to identify the most important elements in a sequence.
+The goal is to obtain a feature representation, in which the most informative elements contribute more.
+For example we may want to identify the most informative words in a sentence, or patches (regions) in an image.
+
+Usually, we obtain the representation of the sequence, 
+by computing a convex combination (weighed sum) of a sequence of vectors. 
+The attention mechanism learns to assign larger weights to the most informative vectors. 
+The magnitude of the weight of each vector signifies how important each vector (element) is.
+
+This tools is made for visualizing the scores of attention mechanisms for Natural Language Processing (Tasks) tasks. 
+At this moment, only is supports the visualization of self-attention mechanisms, for the following tasks:
+ - Regression
+ - Classification
+ - Multi-Label Classification
+
+###Examples
+![](./images/task1_ec/1-01.png=250x)
+
+
 ## Build Setup
 
 ``` bash
