@@ -23,21 +23,35 @@ At this moment, only is supports the visualization of self-attention mechanisms,
 
 ### Examples
 
-
 <p>
-<img src="./images/task1_ec/1-01.png" height="60" >
-<img src="./images/task1_ec/1-02.png" height="60" >
+<img src="./images/task1_ec/1-01.png" height="55" >
+<img src="./images/task1_ec/1-02.png" align="right" height="55" >
 </br>
-<img src="./images/task1_ec/1-04.png" height="60" >
-<img src="./images/task1_ec/1-05.png" align="right" height="60" >
+<img src="./images/task1_ec/1-04.png" height="55" >
+<img src="./images/task1_ec/1-05.png" align="right" height="55" >
 </br>
-<img src="./images/task1_ec/1-10.png" height="60" >
-<img src="./images/task1_ec/1-11.png" align="right" height="60" >
+<img src="./images/task1_ec/1-10.png" height="55" >
+<img src="./images/task1_ec/1-11.png" align="right" height="55" >
 </br>
-<img src="./images/task1_ec/1-12.png" height="60" >
-<img src="./images/task1_ec/1-13.png" align="right" height="60" >
+<img src="./images/task1_ec/1-12.png" height="55" >
+<img src="./images/task1_ec/1-16.png" align="right" height="55" >
 </br>
 </p>
+
+
+### Documentation
+
+_neat-vision_ works with json files containing the tokens (i.e. words, chars), 
+attention weights and model predictions. Depending on the task (classification, regression), 
+you will have to use slightly different format.
+
+In `samples` directory you will find some examples, 
+containing the visualizations of the predictions
+of our team (NTUA-SLP) in Semeval 2018. You can use them to test the tool.
+
+I will upload a detailed documentation soon 
+of how to _neat-vision_ expects the json files to be formatted and how to use it.
+
 
 ## Build Setup
 
