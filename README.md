@@ -1,6 +1,6 @@
 # neat-vision
 
-> Neat (Neural Attention) Vision, is a visualization tool for the attention mechanisms of deep-learning models for Natural Language Processing (NLP) tasks.
+> NeAt (Neural Attention) Vision, is a visualization tool for the attention mechanisms of deep-learning models for Natural Language Processing (NLP) tasks.
 
 ## Build Setup
 
