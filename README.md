@@ -20,12 +20,10 @@ for Natural Language Processing (NLP) tasks.
 
 ![](https://github.com/cbaziotis/neat-vision/raw/master/static/video.mp4)
 
-<VIDEO width ="480" controls="controls">
-<source src="https://github.com/cbaziotis/neat-vision/raw/master/static/video.mp4" 
-type="video/mp4" />
-Your Browser does not Support the Video Tag (Upgrade).
+<video height="720" controls>
+  <source src="https://github.com/cbaziotis/neat-vision/raw/master/static/video.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
 </video>
-
 
 ## Attention Mechanism
 In machine learning and in particular deep-learning,
