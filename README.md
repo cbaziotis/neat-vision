@@ -18,11 +18,12 @@ for Natural Language Processing (NLP) tasks.
 
 **Demo**: https://cbaziotis.github.io/neat-vision/
 
-![](./static/cropped.m4v)
+![video](./static/cropped.m4v)
 
-<video controls="controls">
-  <source type="video/webm" src="./static/cropped.m4v"></source>
-  <p>Your browser does not support the video element.</p>
+<VIDEO width =”480″ height=”351″ controls=”controls”>
+<source src=”./static/cropped.m4v″ type=”video/mp4″ />
+<source src=”./static/cropped.webm” type=”video/webm” />
+Your Browser does not Support the Video Tag (Upgrade).
 </video>
 
 
