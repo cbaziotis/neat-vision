@@ -61,7 +61,7 @@ _neat-vision_ needs 2 kinds of files:
       to a user-defined description.
 
 At this moment, _neat-vision_ only is supports the visualization of 
-self-attention mechanisms, operating at the sentence-level 
+self-attention mechanisms, operating on the sentence-level 
 and for the following tasks:
  - Regression: predict a single continuous value.
  - Multi-class Classification: a classification task with more than two classes.
@@ -84,7 +84,69 @@ In any case, in `\samples` you will find some examples,
 containing the predictions of our team (NTUA-SLP) in Semeval 2018. 
 You can use them to test _neat-vision_ and to check the format of the data files.
 
-**Classification**. 
+**Notes**
+
+ - the posteriors don't have to be normalized, which means you can simply
+  use the logits (before the softmax). _neat-vision_ will normalize the logits
+  for you. This is convenient for PyTorch users.
+ - its ok to include the zero padded attention weights. 
+  It simply matches each token with the corresponding attention weight, 
+  so the zero padded timesteps in the attention weigths don't matter.   
+
+#### Regression 
+The structure of the data file for a classification task is the following:
+```
+{
+    "text": [],       \\ list of strings - the tokens (words, chars) in the text. (required)
+    "label": 0,       \\ float - the actual value. (required)
+    "prediction": 0,  \\ float - the predicted value. (required)
+    "attention": [],  \\ list of floats - the attention weigths. (required)
+    "id": "sample_11" \\ string - a unique id assigned to each sample. (required)
+  }
+```
+
+Here is an example of a sample in a data file:
+```
+{
+    "text": [
+      "i",
+      "have",
+      "never",
+      "been",
+      "so",
+      "excited",
+      "to",
+      "start",
+      "a",
+      "semester",
+      "!"
+    ],
+    "label": 0.969,
+    "prediction": 0.8037105202674866,
+    "attention": [
+      0.030253062024712563,
+      0.04317276179790497,
+      0.12440750747919083,
+      0.018600208684802055,
+      0.023923002183437347,
+      0.1299467384815216,
+      0.1300467699766159,
+      0.13003277778625488,
+      0.1280088871717453,
+      0.1151493638753891,
+      0.12645892798900604,
+      0.0,
+      0.0,
+      ...
+      0.0,
+      0.0
+    ],
+    "id": "sample_11"
+  }
+```
+
+
+#### Classification 
 The structure of the data file for a classification task is the following:
 ```
 {
@@ -219,7 +281,7 @@ Here is an example of a sample in a data file:
       0.0,
       0.0
     ],
-    "id": "TASK1_E-c_dev_144"
+    "id": "sample_55"
   }
 ```
 
