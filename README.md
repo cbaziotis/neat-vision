@@ -18,10 +18,11 @@ for Natural Language Processing (NLP) tasks.
 
 **Demo**: https://cbaziotis.github.io/neat-vision/
 
-![video](https://github.com/cbaziotis/neat-vision/raw/master/static/video.mp4)
+![](https://github.com/cbaziotis/neat-vision/raw/master/static/video.mp4)
 
-<VIDEO width =”480″ height=”351″ controls=”controls”>
-<source src=”https://github.com/cbaziotis/neat-vision/raw/master/static/video.mp4″ type=”video/mp4″ />
+<VIDEO width ="480" controls="controls">
+<source src="https://github.com/cbaziotis/neat-vision/raw/master/static/video.mp4" 
+type="video/mp4" />
 Your Browser does not Support the Video Tag (Upgrade).
 </video>
 
