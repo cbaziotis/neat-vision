@@ -49,9 +49,9 @@ how important each vector (i.e. word) is for the task at hand.
 </p>
 
 
-### Documentation
+## Documentation
 
-#### Overview
+### Overview
 In _neat-vision_ needs 2 kinds of files:
  - **Data file**. This file contains  (1) the text (tokenized), 
       (2) the attention scores and (3) the models predictions.
@@ -71,7 +71,7 @@ and for the following tasks:
    Essentially, it is a binary classification task for each class.  
 
 
-#### Input Format
+### Input Format
 
 Here you will find a detailed overview of 
 how to properly format the output files, for each task.
@@ -86,7 +86,7 @@ You can use them to test _neat-vision_ and to check the format of the data files
 
 **Classification**. 
 The structure of the data file for a classification task is the following:
-```json
+```
 {
     "text": [],       \\ list of strings - the tokens (words, chars) in the text. (required)
     "label": 0,       \\ integer - the class label. (required)
@@ -94,7 +94,7 @@ The structure of the data file for a classification task is the following:
     "posterior": [],  \\ list of floats - the posterior probabilities. (optional)
     "attention": [],  \\ list of floats - the attention weigths. (required)
     "id": "sample_99" \\ string - a unique id assigned to each sample. (required)
-  },
+  }
 ```
 
 Here is an example of a sample in a data file:
@@ -134,14 +134,14 @@ Here is an example of a sample in a data file:
       0.0
     ],
     "id": "sample_99"
-  },
+  }
 ```
 
 
 
 **Multilabel Classification**. 
 The structure of the data file for a classification task is the following:
-```json
+```
 {
     "text": [],       \\ list of strings - the tokens (words, chars) in the text. (required)
     "label": 0,       \\ list of ints - the class labels - binary vector. (required)
@@ -153,7 +153,7 @@ The structure of the data file for a classification task is the following:
 ```
 
 Here is an example of a sample in a data file:
-```json
+```
 {
     "text": [
       "<allcaps>",
