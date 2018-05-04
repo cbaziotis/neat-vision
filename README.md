@@ -358,7 +358,7 @@ of each class label to a name and description. Here is such an example:
 ```
 
 
-### Examples
+### Visualization Examples
 
 <p>
 <img src="./images/task1_ec/1-01.png" height="55" >
