@@ -15,36 +15,21 @@ for Natural Language Processing (NLP) tasks.
   - Support for classification, multilabel classification and regression.
 
 
+_neat-vision_ is made for visualizing the weights of attention mechanisms 
+for Natural Language Processing (Tasks) tasks.
+At the moment, _neat-vision_ works only 
+for self-attention mechanisms for sentence-level models.
+However in the future there are plans for 
+supporting document-level models (hierarchical) and seq2seq models, 
+such as in Neural Machine Translation.
+
+
 **Demo**: https://cbaziotis.github.io/neat-vision/
 
 <p style="text-align:center;">
 <img src="./static/video.gif" alt="demo" style="width: 800px; max-width=100%;"/>
 </p>
 
-## Attention Mechanism
-In machine learning and in particular deep-learning,
-whenever we want to identify  the most informative words in a sentence, 
-or patches (regions) in an image, we employ an attention mechanism.
-The goal is to obtain a fixed feature representation for the input, 
-in which the most informative elements contribute more.
-
-_neat-vision_ is made for visualizing the weights of attention mechanisms 
-for Natural Language Processing (Tasks) tasks.
-In NLP the input text is expressed as a sequence of words or characters,
-where each of them is represented by a feature vector.
-The feature vector of word ![equation](http://latex.codecogs.com/gif.latex?w_i) 
-might be the `i-th` output of an embedding layer ![equation](http://latex.codecogs.com/gif.latex?e_i), 
-or usually, the `i-th` output of an RNN ![equation](http://latex.codecogs.com/gif.latex?h_i).
-
-
-
-In the simplest case, we use a self-attention mechanism, 
-in order to obtain a fixed vector representation for the input,
-by computing a weighed sum (convex combination) of its constituent vectors. 
-The attention mechanism learns to assign larger weights 
-to the most informative vectors (i.e. words). 
-The magnitude of the weight of each vector signifies 
-how important each vector (i.e. word) is for the task at hand.
 
 ### Examples
 
