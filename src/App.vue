@@ -88,7 +88,8 @@
             <div class="col-sm-12">
               <nav class="navbar  navbar-light bg-light fixed-top">
                 <a class="navbar-brand" href="#">
-                  <strong>Neat</strong> (Neural Attention) <strong>Vision</strong>
+                  <strong>Neat</strong> (Neural Attention)
+                  <strong>Vision</strong>
                 </a>
                 <b-button
                   class="navbar-toggler"
@@ -109,7 +110,8 @@
           </div>
 
           <!--TOP PAGINATION-->
-          <div class="row " v-if="validSamples(samples).length>0 && !statuses.isLoadingFile">
+          <div class="row "
+               v-if="validSamples(samples).length>0 && !statuses.isLoadingFile">
             <div class="col-12 col-md">
               <b-pagination size="sm" align="right"
                             v-model="pagination.currentPage"
@@ -121,13 +123,13 @@
               <div style="background: red; width: 300px;">
                 <b-form inline class="float-right">
                   <label class="mr-sm-2">Per Page</label>
-                  <b-form-select v-model="pagination.perPage" :options="pagination.options" size="sm"/>
+                  <b-form-select v-model="pagination.perPage"
+                                 :options="pagination.options" size="sm"/>
                 </b-form>
 
               </div>
             </div>
           </div>
-
 
           <!--SAMPLES-->
           <div class="div" v-if="!statuses.isLoadingFile">
@@ -136,7 +138,8 @@
                  :key="sample.id">
               <div class="col-sm-12">
                 <div class="sample">
-                  <app-sentence :sentence="sample" :options="options" :index="sample.id"/>
+                  <app-sentence :sentence="sample" :options="options"
+                                :index="sample.id"/>
 
                   <hr v-if="options.showPredictions">
 
@@ -155,7 +158,6 @@
                     :options="options"
                     :index="sample.id"/>
 
-
                   <!--Multi-Label Classification-->
                   <app-prediction-multi-classification
                     v-if="options.showPredictions && options.task === 'multi-clf'"
@@ -170,7 +172,8 @@
           </div>
 
           <!--BOTTOM PAGINATION-->
-          <div class="row " v-if="validSamples(samples).length>0 && !statuses.isLoadingFile">
+          <div class="row "
+               v-if="validSamples(samples).length>0 && !statuses.isLoadingFile">
             <div class="col-12 col-md">
               <b-pagination size="sm" align="right"
                             v-model="pagination.currentPage"
@@ -182,7 +185,8 @@
               <div style="background: red; width: 300px;">
                 <b-form inline class="float-right">
                   <label class="mr-sm-2">Per Page</label>
-                  <b-form-select v-model="pagination.perPage" :options="pagination.options" size="sm"/>
+                  <b-form-select v-model="pagination.perPage"
+                                 :options="pagination.options" size="sm"/>
                 </b-form>
 
               </div>
@@ -195,144 +199,141 @@
 
     </div>
 
-
   </div>
 </template>
 
 <script>
+  /* eslint-disable camelcase */
+
   export default {
-    data() {
-      return {
-        samples: null,
-        labels: null,
-        attentionsFile: null,
-        labelsFile: null,
-        sidebar: true,
-        statuses: {
-          isLoadingFile: false
-        },
-        options: {
-          showAttentions: true,
-          colorAttentions: false,
-          showPredictions: false,
-          onlyCorrect: false,
-          maxLength: 40,
-          maxLoss: 0,
-          colorWords: true,
-          filteredLabel: null,
-          task: "clf"
-        },
-        tasks: [
-          {text: 'Classification', value: 'clf'},
-          {text: 'Regression', value: 'reg'},
-          {text: 'Multi-Label Classification', value: 'multi-clf'},
-        ],
-        pagination: {
-          currentPage: 1,
-          perPage: 100,
-          options: [50, 100, 200, 300, 500, 1000]
-        }
-      }
-    },
-    watch: {
-      'options.task': function (val, oldVal) {
-        this.labels = null;
-        this.samples = null;
-      }
-    },
-    methods: {
-      loadAttentions: function () {
-        let reader = new FileReader();
-        let vm = this;
-        this.statuses.isLoadingFile = true;
-        reader.onload = (e) => {
-          try {
-            vm.samples = JSON.parse(e.target.result);
-          } catch (ex) {
-            alert('ex when trying to parse json = ' + ex);
-          } finally {
-            this.statuses.isLoadingFile = false;
-          }
-        };
-        reader.readAsText(this.attentionsFile);
+  data () {
+    return {
+      samples: null,
+      labels: null,
+      attentionsFile: null,
+      labelsFile: null,
+      sidebar: true,
+      statuses: {
+        isLoadingFile: false
       },
-      loadLabels: function () {
-        let reader = new FileReader();
-        let vm = this;
-        reader.onload = (e) => {
-          try {
-            vm.labels = JSON.parse(e.target.result);
-          } catch (ex) {
-            alert('ex when trying to parse json = ' + ex);
-          }
-        };
-        reader.readAsText(this.labelsFile);
+      options: {
+        showAttentions: true,
+        colorAttentions: false,
+        showPredictions: false,
+        onlyCorrect: false,
+        maxLength: 40,
+        maxLoss: 0,
+        colorWords: true,
+        filteredLabel: null,
+        task: 'clf'
       },
-      loadData: function () {
-
-        if (!this.options.attentionsFile) {
-          alert("Select a data file first!")
-        } else {
-          this.options.filteredLabel = null;
-          this.loadAttentions();
-          this.loadLabels();
-        }
-      },
-      isSampleVisible: function (sentence) {
-
-        if (this.options.maxLength > 0 &&
-          sentence.text.length > this.options.maxLength) {
-          return false;
-        }
-
-        if (this.options.task === 'clf') {
-          if (this.options.onlyCorrect && sentence.label !== sentence.prediction) {
-            return false;
-          }
-
-          if (this.options.filteredLabel != null && sentence.label != this.options.filteredLabel) {
-            return false;
-          }
-        }
-        else if (this.options.task === 'multi-clf') {
-          if (this.options.onlyCorrect && !_.isEqual(sentence.label, sentence.prediction)) {
-            return false;
-          }
-        }
-        else if (this.options.task === 'reg') {
-          let diff = Math.abs(sentence.label - sentence.prediction);
-          if (this.options.maxLoss > 0 && diff > this.options.maxLoss) {
-            return false;
-          }
-        }
-        return true;
-      },
-      validSamples: function (arr) {
-        try {
-          return arr.filter(sentence => this.isSampleVisible(sentence));
-        } catch (ex) {
-          return []
-        }
-      },
-      paginate: function (array, page_size, page_number) {
-        --page_number; // because pages logically start with 1, but technically with 0
-        return array.slice(page_number * page_size, (page_number + 1) * page_size);
-      },
-      getLabelsEc: function (sample) {
-        let labels = [];
-        var that = this;
-        Object.keys(that.labels).forEach(function (key) {
-          if (sample.label[key]) {
-            labels.push(that.labels[key].name)
-          }
-        });
-        return labels.join(", ");
-      },
-      getIndex: function (index) {
-        return index + ((this.pagination.currentPage - 1) * this.pagination.perPage);
+      tasks: [
+        {text: 'Classification', value: 'clf'},
+        {text: 'Regression', value: 'reg'},
+        {text: 'Multi-Label Classification', value: 'multi-clf'}
+      ],
+      pagination: {
+        currentPage: 1,
+        perPage: 100,
+        options: [50, 100, 200, 300, 500, 1000]
       }
     }
+  },
+  watch: {
+    'options.task': function (val, oldVal) {
+      this.labels = null
+      this.samples = null
+    }
+  },
+  methods: {
+    loadAttentions: function () {
+      let reader = new FileReader()
+      let vm = this
+      this.statuses.isLoadingFile = true
+      reader.onload = (e) => {
+        try {
+          vm.samples = JSON.parse(e.target.result)
+        } catch (ex) {
+          alert('ex when trying to parse json = ' + ex)
+        } finally {
+          this.statuses.isLoadingFile = false
+        }
+      }
+      reader.readAsText(this.attentionsFile)
+    },
+    loadLabels: function () {
+      let reader = new FileReader()
+      let vm = this
+      reader.onload = (e) => {
+        try {
+          vm.labels = JSON.parse(e.target.result)
+        } catch (ex) {
+          alert('ex when trying to parse json = ' + ex)
+        }
+      }
+      reader.readAsText(this.labelsFile)
+    },
+    loadData: function () {
+      if (this.attentionsFile == null) {
+        alert('Select a data file first!')
+      } else {
+        this.options.filteredLabel = null
+        this.loadAttentions()
+        this.loadLabels()
+      }
+    },
+    isSampleVisible: function (sentence) {
+      if (this.options.maxLength > 0 &&
+          sentence.text.length > this.options.maxLength) {
+        return false
+      }
+
+      if (this.options.task === 'clf') {
+        if (this.options.onlyCorrect && sentence.label !== sentence.prediction) {
+          return false
+        }
+
+        if (this.options.filteredLabel != null && sentence.label != this.options.filteredLabel) {
+          return false
+        }
+      } else if (this.options.task === 'multi-clf') {
+        if (this.options.onlyCorrect && !_.isEqual(sentence.label, sentence.prediction)) {
+          return false
+        }
+      } else if (this.options.task === 'reg') {
+        let diff = Math.abs(sentence.label - sentence.prediction)
+        if (this.options.maxLoss > 0 && diff > this.options.maxLoss) {
+          return false
+        }
+      }
+      return true
+    },
+    validSamples: function (arr) {
+      try {
+        return arr.filter(sentence => this.isSampleVisible(sentence))
+      } catch (ex) {
+        return []
+      }
+    },
+    paginate: function (array, page_size, page_number) {
+      --page_number // because pages logically start with 1, but technically with 0
+      return array.slice(page_number * page_size, (page_number + 1) * page_size)
+    },
+    getLabelsEc: function (sample) {
+      let labels = []
+      var that = this
+      Object.keys(that.labels).forEach(function (key) {
+        if (sample.label[key]) {
+          labels.push(that.labels[key].name)
+        }
+      })
+      return labels.join(', ')
+    },
+    getIndex: function (index) {
+      return index + ((this.pagination.currentPage - 1) * this.pagination.perPage)
+    }
   }
+}
 </script>
 
 <style>
