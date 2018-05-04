@@ -17,11 +17,19 @@ for Natural Language Processing (NLP) tasks.
 
 _neat-vision_ is made for visualizing the weights of attention mechanisms 
 for Natural Language Processing (Tasks) tasks.
-At the moment, _neat-vision_ works only 
-for self-attention mechanisms for sentence-level models.
+At this moment, _neat-vision_ only supports the visualization of 
+self-attention mechanisms, operating on the sentence-level 
+and for the following tasks:
+ - Regression: predict a single continuous value.
+ - Multi-class Classification: a classification task with more than two classes.
+  Each sample belongs to one of `N` classes.
+ - Multi-label Classification: we have `N` classes 
+   and each sample may belong to more than one classes.
+   Essentially, it is a binary classification task for each class.  
+   
 However in the future there are plans for 
 supporting document-level models (hierarchical) and seq2seq models, 
-such as in Neural Machine Translation.
+such as in Neural Machine Translation (NMT).
 
 
 **Website (live)**: https://cbaziotis.github.io/neat-vision/
@@ -43,16 +51,6 @@ _neat-vision_ takes as input 2 kinds of `json` files:
       This is needed only in classifications tasks 
       and if provided, it is used for mapping each class label 
       to a user-defined description.
-
-At this moment, _neat-vision_ only supports the visualization of 
-self-attention mechanisms, operating on the sentence-level 
-and for the following tasks:
- - Regression: predict a single continuous value.
- - Multi-class Classification: a classification task with more than two classes.
-  Each sample belongs to one of `N` classes.
- - Multi-label Classification: we have `N` classes 
-   and each sample may belong to more than one classes.
-   Essentially, it is a binary classification task for each class.  
 
 
 ### Input Format
