@@ -33,6 +33,7 @@ such as in Neural Machine Translation.
 
 ### Examples
 
+<p>
 <img src="./images/task1_ec/1-01.png" height="40" >
 <img src="./images/task1_ec/1-02.png" align="right" height="40" >
 </br>
@@ -44,6 +45,8 @@ such as in Neural Machine Translation.
 </br>
 <img src="./images/task1_ec/1-12.png" height="40" >
 <img src="./images/task1_ec/1-16.png" align="right" height="40" >
+</br>
+</p>
 
 
 ## Documentation
