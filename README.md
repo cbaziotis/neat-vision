@@ -18,12 +18,7 @@ for Natural Language Processing (NLP) tasks.
 
 **Demo**: https://cbaziotis.github.io/neat-vision/
 
-![](https://github.com/cbaziotis/neat-vision/raw/master/static/video.mp4)
-
-<video height="720" controls>
-  <source src="https://github.com/cbaziotis/neat-vision/raw/master/static/video.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+![Demo](./static/demo.gif)
 
 ## Attention Mechanism
 In machine learning and in particular deep-learning,
