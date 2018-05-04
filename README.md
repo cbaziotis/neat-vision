@@ -18,7 +18,7 @@ for Natural Language Processing (NLP) tasks.
 **Demo**: https://cbaziotis.github.io/neat-vision/
 
 <p style="text-align:center;">
-<img src="./static/demo.gif" alt="demo" style="width: 800px; max-width=100%;"/>
+<img src="./static/video.gif" alt="demo" style="width: 800px; max-width=100%;"/>
 </p>
 
 ## Attention Mechanism
