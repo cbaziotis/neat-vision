@@ -52,7 +52,7 @@ how important each vector (i.e. word) is for the task at hand.
 ## Documentation
 
 ### Overview
-_neat-vision_ needs 2 kinds of files:
+_neat-vision_ takes as input 2 kinds of `json` files:
  - **Data file**. This file contains  (1) the text (tokenized), 
       (2) the attention scores and (3) the models predictions.
  - **Label file** (optional). 
@@ -285,6 +285,93 @@ Here is an example of a sample in a data file:
   }
 ```
 
+##### Labels
+In classification tasks, you can optionally provide a mapping 
+of each class label to a name and description. Here is such an example:
+```json
+{
+  "0": {
+    "name": "❤",
+    "desc": "_red_heart_"
+  },
+  "1": {
+    "name": "😍",
+    "desc": "_smiling_face_with_hearteyes_"
+  },
+  "2": {
+    "name": "😂",
+    "desc": "_face_with_tears_of_joy_"
+  },
+  "3": {
+    "name": "💕",
+    "desc": "_two_hearts_"
+  },
+  "4": {
+    "name": "🔥",
+    "desc": "_fire_"
+  },
+  "5": {
+    "name": "😊",
+    "desc": "_smiling_face_with_smiling_eyes_"
+  },
+  "6": {
+    "name": "😎",
+    "desc": "_smiling_face_with_sunglasses_"
+  },
+  "7": {
+    "name": "✨",
+    "desc": "_sparkles_"
+  },
+  "8": {
+    "name": "💙",
+    "desc": "_blue_heart_"
+  },
+  "9": {
+    "name": "😘",
+    "desc": "_face_blowing_a_kiss_"
+  },
+  "10": {
+    "name": "📷",
+    "desc": "_camera_"
+  },
+  "11": {
+    "name": "🇺🇸",
+    "desc": "_United_States_"
+  },
+  "12": {
+    "name": "☀",
+    "desc": "_sun_"
+  },
+  "13": {
+    "name": "💜",
+    "desc": "_purple_heart_"
+  },
+  "14": {
+    "name": "😉",
+    "desc": "_winking_face_"
+  },
+  "15": {
+    "name": "💯",
+    "desc": "_hundred_points_"
+  },
+  "16": {
+    "name": "😁",
+    "desc": "_beaming_face_with_smiling_eyes_"
+  },
+  "17": {
+    "name": "🎄",
+    "desc": "_Christmas_tree_"
+  },
+  "18": {
+    "name": "📸",
+    "desc": "_camera_with_flash_"
+  },
+  "19": {
+    "name": "😜",
+    "desc": "_winking_face_with_tongue_"
+  }
+}
+```
 
 
 ## Build Setup
