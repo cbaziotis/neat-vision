@@ -5,10 +5,9 @@ for the attention mechanisms of deep-learning models
 for Natural Language Processing (NLP) tasks.
 
 #### Features
-  - Visualize the attention scores in multiple ways: heatmap over words,
-  over scores, show/hide the scores and more.
+  - Visualize the attention scores, with lots of options.
   - Export the visualization to SVG format. This is very convenient if you
-  want to use the visualization in an academic paper. However, you have first
+  want to use the visualization in an academic paper. However, you may have
   to convert the SVG to PDF.
   - Visualize the models predictions. Show the posterior distribution over the
   classes, the error in regression tasks and more. Useful for debugging your
@@ -19,7 +18,7 @@ for Natural Language Processing (NLP) tasks.
 **Demo**: https://cbaziotis.github.io/neat-vision/
 
 ![Demo](./static/demo.gif)
-<img src="./static/demo.gif" alt="drawing" style="width: 800px;"/>
+<img src="./static/demo.gif" alt="drawing" style="max-width: 100%;"/>
 
 
 ## Attention Mechanism
@@ -76,7 +75,7 @@ _neat-vision_ takes as input 2 kinds of `json` files:
       and if provided, it is used for mapping each class label 
       to a user-defined description.
 
-At this moment, _neat-vision_ only is supports the visualization of 
+At this moment, _neat-vision_ only supports the visualization of 
 self-attention mechanisms, operating on the sentence-level 
 and for the following tasks:
  - Regression: predict a single continuous value.
