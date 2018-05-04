@@ -18,13 +18,6 @@ for Natural Language Processing (NLP) tasks.
 
 **Demo**: https://cbaziotis.github.io/neat-vision/
 
-![](static/cropped.webm)
-
-<video controls="controls">
-  <source type="video/webm" src="static/cropped.webm"></source>
-  <p>Your browser does not support the video element.</p>
-</video>
-
 
 ## Attention Mechanism
 In machine learning and in particular deep-learning,
