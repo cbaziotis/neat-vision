@@ -52,7 +52,7 @@ how important each vector (i.e. word) is for the task at hand.
 ## Documentation
 
 ### Overview
-In _neat-vision_ needs 2 kinds of files:
+_neat-vision_ needs 2 kinds of files:
  - **Data file**. This file contains  (1) the text (tokenized), 
       (2) the attention scores and (3) the models predictions.
  - **Label file** (optional). 
@@ -63,10 +63,10 @@ In _neat-vision_ needs 2 kinds of files:
 At this moment, _neat-vision_ only is supports the visualization of 
 self-attention mechanisms, operating at the sentence-level 
 and for the following tasks:
- - Regression.
- - Multi-class Classification: means a classification task with more than two classes.
+ - Regression: predict a single continuous value.
+ - Multi-class Classification: a classification task with more than two classes.
   Each sample belongs to one of `N` classes.
- - Multi-label Classification: means that we have `N` classes 
+ - Multi-label Classification: we have `N` classes 
    and each sample may belong to more than one classes.
    Essentially, it is a binary classification task for each class.  
 
@@ -98,7 +98,7 @@ The structure of the data file for a classification task is the following:
 ```
 
 Here is an example of a sample in a data file:
-```json
+```
 {
     "text": [
       "20",
@@ -149,7 +149,7 @@ The structure of the data file for a classification task is the following:
     "posterior": [],  \\ list of floats - the posterior probabilities. (optional)
     "attention": [],  \\ list of floats - the attention weigths. (required)
     "id": "sample_55" \\ string - a unique id assigned to each sample. (required)
-  },
+}
 ```
 
 Here is an example of a sample in a data file:
