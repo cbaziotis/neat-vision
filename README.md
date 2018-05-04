@@ -24,7 +24,7 @@ supporting document-level models (hierarchical) and seq2seq models,
 such as in Neural Machine Translation.
 
 
-**Demo**: https://cbaziotis.github.io/neat-vision/
+**Website (live)**: https://cbaziotis.github.io/neat-vision/
 
 <p style="text-align:center;">
 <img src="./static/video.gif" alt="demo" style="width: 800px; max-width=100%;"/>
@@ -33,20 +33,22 @@ such as in Neural Machine Translation.
 
 ### Examples
 
-<p>
-<img src="./images/task1_ec/1-01.png" height="50" >
+<img src="./images/task1_ec/1-01.png" height="40" >
+</br>
 <img src="./images/task1_ec/1-02.png" align="right" height="55" >
 </br>
-<img src="./images/task1_ec/1-04.png" height="50" >
+<img src="./images/task1_ec/1-04.png" height="40" >
+</br>
 <img src="./images/task1_ec/1-05.png" align="right" height="55" >
 </br>
-<img src="./images/task1_ec/1-10.png" height="50" >
+<img src="./images/task1_ec/1-10.png" height="40" >
+</br>
 <img src="./images/task1_ec/1-11.png" align="right" height="55" >
 </br>
-<img src="./images/task1_ec/1-12.png" height="50" >
+<img src="./images/task1_ec/1-12.png" height="40" >
+</br>
 <img src="./images/task1_ec/1-16.png" align="right" height="55" >
 </br>
-</p>
 
 
 ## Documentation
