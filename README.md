@@ -4,6 +4,18 @@
 for the attention mechanisms of deep-learning models 
 for Natural Language Processing (NLP) tasks.
 
+#### Features
+  - Visualize the attention scores in multiple ways: heatmap over words,
+  over scores, show/hide the scores and more.
+  - Export the visualization to SVG format. This is very convenient if you
+  want to use the visualization in an academic paper. However, you have first
+  to convert the SVG to PDF.
+  - Visualize the models predictions. Show the posterior distribution over the
+  classes, the error in regression tasks and more. Useful for debugging your
+  models and inspecting their behavior.
+  - Support for classification, multilabel classification and regression.
+
+
 **Demo**: https://cbaziotis.github.io/neat-vision/
 
 ## Attention Mechanism
@@ -201,7 +213,7 @@ Here is an example of a sample in a data file:
 
 
 
-**Multilabel Classification**. 
+#### Multilabel Classification 
 The structure of the data file for a classification task is the following:
 ```
 {
